@@ -1,7 +1,7 @@
 
 // Assignment code here
 function generatePassword() {
-    var Lowercase = "abcdefghijklmnopqrstuvwxyz";
+    var lowercase = "abcdefghijklmnopqrstuvwxyz";
     var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var numbers = "0123456789";
     var special = "!$^&*-=+_?";
@@ -53,20 +53,21 @@ function generatePassword() {
     if (hasLowercase === false && hasUppercase === false && hasNumbers === false && hasSpecial === false) {
       return "Please select at least one character type.";
     };
-  
+    var possibleCharacters = "";
     // group selected characters
     if (hasLowercase) {
-      possibleCharacters = possibleCharacters.concat(lowercaseCharacters);
+      possibleCharacters = possibleCharacters.concat(lowercase);
     }
     if (hasUppercase) {
-      possibleCharacters = possibleCharacters.concat(uppercaseCharacters);
+      possibleCharacters = possibleCharacters.concat(uppercase);
     }
     if (hasNumbers) {
-      possibleCharacters = possibleCharacters.concat(numericCharacters);
+      possibleCharacters = possibleCharacters.concat(numbers);
     }
     if (hasSpecial) {
-      possibleCharacters = possibleCharacters.concat(specialCharacters);
+      possibleCharacters = possibleCharacters.concat(special);
     }
+    console.log ("possiblecharacters = ", possibleCharacters);
   
     // pick random cards out of new pool for length of password
     let finalPassword = ""
